@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.xll.employmentanalysis.mapper.JobCountMapper">
+    <select id="findJobCountByConditions" resultType="cn.xll.employmentanalysis.pojo.entity.JobCount">
+        SELECT * FROM shanghai_job_count
+        <where>
+            <if test="jobName != null and jobName != ''">
+                AND job_name LIKE CONCAT('%', #{jobName}, '%')
+            </if>
+            <if test="companyLocal != null and companyLocal != ''">
+                AND company_local LIKE CONCAT('%', #{companyLocal}, '%')
+            </if>
+        </where>
+        ORDER BY job_count
+        <choose>
+            <when test="order.equals('ASC')">
+                ASC
+            </when>
+            <when test="order.equals('DESC')">
+                DESC
+            </when>
+            <otherwise>
+                DESC
+            </otherwise>
+        </choose>
+    </select>
+</mapper>
