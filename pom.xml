@@ -141,6 +141,7 @@
                     <!-- 设置编译jdk版本 -->
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
+                    <release>8</release>
                 </configuration>
             </plugin>
             <plugin>
