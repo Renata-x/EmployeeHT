@@ -134,14 +134,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>3.13.0</version>
                 <configuration>
                     <!-- 设置编译字符编码 -->
                     <encoding>UTF-8</encoding>
                     <!-- 设置编译jdk版本 -->
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
-                    <release>8</release>
                 </configuration>
             </plugin>
             <plugin>
